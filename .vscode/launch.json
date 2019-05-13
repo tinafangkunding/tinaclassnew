@@ -1,0 +1,64 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "get-restaurants",
+            //"sourceMaps" : true,
+            "program": "${workspaceFolder}\\node_modules\\serverless\\bin\\serverless",
+            "args": [
+                "invoke",
+                "local",
+                "-f",
+                "get-restaurants",
+                "-d",
+                "{}"
+            ],
+            "env":{
+                "restaurants_table": "restaurants2"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "search-restaurants",
+            //"sourceMaps" : true,
+            "program": "${workspaceFolder}\\node_modules\\serverless\\bin\\serverless",
+            "args": [
+                "invoke",
+                "local",
+                "-f",
+                "search-restaurants",
+                "-p",
+                "examples/search-restaurants.json"
+            ],
+            "env":{
+                "restaurants_table": "restaurants2"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "get-index",
+            //"program": "${workspaceFolder}/node_modules/.bin/sls",
+            "program": "${workspaceFolder}\\node_modules\\serverless\\bin\\serverless",
+            "args": [
+                "invoke",
+                "local",
+                "-f",
+                "get-index",
+                "-d",
+                "{}"
+            ],
+            "env":{
+                "restaurants_api": "https://vo6fha5uj4.execute-api.us-east-1.amazonaws.com/dev/restaurants",
+                "cognito_user_pool_id": "us-east-1_plji5Qpmj",
+                "cognito_client_id": "5ofpv15oue06l0rp66mkfinabr"
+            }
+        }
+    ]
+}
