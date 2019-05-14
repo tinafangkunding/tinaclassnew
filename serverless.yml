@@ -15,7 +15,6 @@ app: tina-app
 service: tina-class4 # NOTE: update this with your service name
 
 plugins:
-  - '@serverless/enterprise-plugin'
   - serverless-pseudo-parameters
   - serverless-sam
 
