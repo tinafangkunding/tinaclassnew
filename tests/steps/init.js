@@ -26,7 +26,7 @@ let init = co.wrap(function*(){
     
     if(cred.sessionToken){
         process.env.AWS_SESSION_TOKEN = cred.sessionToken;
-      }  
+    }  
 
     initialized = true;
 });
